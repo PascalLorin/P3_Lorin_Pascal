@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/b336c3d0c9.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Pascal Lorin">
+	<meta name="description"
+		content="ohmyfood, reservation restaurant, reservation repas, repas en ligne, restaurant gastronomique, gastronomie">
+	<title>Reservia</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<!-- Début du header -->
+	<header>
+		<!-- Affichage du logo -->
+		<div class="header-logo">
+			<a class="logo"><img src="./public/img/logo/ohmyfood@2x.svg"
+					title="Réservez votre menu gastronomique en ligne" alt="Votre menu gastronimique en ligne"></a>
+		</div>
+
+		<!--   Sélection du lieu   -->
+		<div class="place-select">
+			<form method="POST" action="#" class="place-select__search">
+
+				<button class="place-select__icon" type="button" name="place-select__icon"
+					title="Cliquer sur l'icône pour rechercher sur un plan">
+					<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+				</button>
+
+				<input class="place-select__input" name="place-select__input" type="text" size="40" maxlength="100"
+					required placeholder="Paris, Belleville">
+
+				<div class="main-title">
+					<span>Reservez le menu qui vous convient</span>
+					<p class="main-title__p">Découvrez des restaurants d'exception, sélectionnés pour vous"</p>
+				</div>
+
+				<button class="place-select__btn" type="button" name="place-select__btn" aria-hidden="true"
+					title="Cliquer sur le bouton pour explorer ce lieu">Explorer nos restaurants
+				</button>
+
+			</form>
+		</div>
+
+	</header>
+
+	<!--  Liste des explications  -->
+	<div id="explain-fonct" class="explain-fonct">
+
+		<fieldset class="explain-fonct__items">
+
+			<div class="explain-fonct__title">
+				<span>Fonctionnement</span>
+			</div>
+
+			<div class="explain-fonct__item">
+				<span><i class="fas fa-info explain-fonct__iconinfo"></i></span>
+				<span><i class="fas fa-mobile-alt explain-fonct_icone"></i></span>
+				<form class="fonct-choisir" method="POST" action="#">
+					<input class="explain-fonct__input" type="submit" name="fonct-choisir"
+						value="Choisissez un restaurant" title="Cliquer pour choisir">
+				</form>
+			</div>
+
+
+			<div class="explain-fonct__item">
+				<span><i class="fas fa-info explain-fonct__iconinfo"></i></span>
+				<span><i class="fas fa-list-ul explain-fonct_icone"></i></span>
+				<form class="fonct-composer" method="POST" action="#">
+					<input class="explain-fonct__input" type="submit" name="fonct-composer" value="Composez votre menu"
+						title="Cliquer pour choisir">
+				</form>
+			</div>
+
+			<div class="explain-fonct__item">
+				<span><i class="fas fa-info explain-fonct__iconinfo"></i></span>
+				<span><i class="fas fa-store explain-fonct_icone"></i></span>
+				<form class="fonct-choisir" method="POST" action="#">
+					<input class="explain-fonct__input" type="submit" name="fonct-deguster"
+						value="Déguster au restaurant" title="Cliquer pour choisir">
+				</form>
+			</div>
+
+		</fieldset>
+	</div>
+
+	<!-- Début affichage des restaurants -->
+
+	<!-- Affichage des + populaires    -->
+	<section class="results-container">
+		<div class="results-list__title">
+			Restaurants
+		</div>
+		<div class="results-list">
+
+			<div class="results-list__item">
+
+				<a href="./details.html" target="_blank" title="Cliquer pour afficher le menu, nouvel onglet">
+					<img class="results-list__pict"
+						src="./public/img/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+						alt="Table de La palette du goût">
+					<div class="results-list__new">
+						Nouveau
+					</div>
+					<div class="results-list__discribe">
+						<div class="results-list__name">
+							<h2>La palette du goût</h2>
+							<p class="results-list__place">
+								Mesnilmontant
+							</p>
+						</div>
+
+						<div class="results-list__heart">
+							<i class="fas fa-heart"></i>
+							<form class="mark-favorite" method="POST" action="#">
+								<input class="mark-favorite__input" type="submit" name="mark-favorite__1"
+									value="Marquer comme restaurant favori" title="Cliquer pour en faire un favori">
+							</form>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Début du pied de page -->
+	<footer>
+		<div class="footer-title">
+			<img src="./public/img/logo/ohmyfood@2x.svg">
+		</div>
+
+		<div class="footer-nav">
+			<ul>
+				<li>
+					<a href="#">
+						<i class="footer-nav__icon fas-utensils"></i>	
+						<span class="footer-nav__optbold">
+							Proposer un restaurant
+						</span>	
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="footer-nav__icon fas-hands-helping"></i>	
+						<span class="footer-nav__optbold">
+							Devenir partenaire
+						</span>
+					</a>
+				</li>
+				<li><a href="#">Mentions légales</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+
+</html>

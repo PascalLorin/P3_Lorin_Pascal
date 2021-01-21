@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "maquette reservations ohmyfood ",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PascalLorin/P3_Lorin_Pascal.git"
+  },
+  "author": "PascalLorin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PascalLorin/P3_Lorin_Pascal/issues"
+  },
+  "homepage": "https://github.com/PascalLorin/P3_Lorin_Pascal#readme"
+}
