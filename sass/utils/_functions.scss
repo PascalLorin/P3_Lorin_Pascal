@@ -5,3 +5,11 @@
         @return darken($colour, 10%);
     }
 }
+
+@function lighten-button($colour) {
+    @return lighten($colour, 15%);
+}
+
+@function darken-shadow($colour) {
+    @return darken($colour, 25%)
+}
