@@ -1,10 +1,12 @@
+
+/*
 .form {
     width: 100%;
     padding-bottom: $grid-gutter;
     &__heading {
         width: 100%;
-        color: $colour-white;
-        @include heading-shadow;
+        color: white;
+        @include heading-shadow;   
         background: $colour-primary;
         line-height: 5rem;
         padding: $grid-gutter;
@@ -42,3 +44,5 @@
         }
     }
 }
+
+*/

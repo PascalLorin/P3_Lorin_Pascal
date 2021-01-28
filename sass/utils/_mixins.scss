@@ -1,10 +1,13 @@
+
 @mixin heading-shadow($colour:lightness-shift($colour-primary), $offset: $heading-shadow-size){
     text-shadow: $offset $offset $colour;
 }
 
+
 @mixin border($colour:$colour-primary) {
     border: .1rem solid $colour;
 }
+
 
 @mixin img-ratio {
     width: 100%;

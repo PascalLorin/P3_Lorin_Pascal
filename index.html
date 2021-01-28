@@ -5,54 +5,55 @@
 	<meta charset="utf-8">
 	<script src="https://kit.fontawesome.com/b336c3d0c9.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Shrickhand&display=swap"
+		rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Pascal Lorin">
 	<meta name="description"
 		content="ohmyfood, reservation restaurant, reservation repas, repas en ligne, restaurant gastronomique, gastronomie">
-	<title>Reservia</title>
+	<title>ohmyfood</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
+	<!-- Exécution du spinner -->
 	<!-- Début du header -->
 	<header>
 		<!-- Affichage du logo -->
-		<div class="header-logo">
-			<a class="logo"><img src="./public/img/logo/ohmyfood@2x.svg"
-					title="Réservez votre menu gastronomique en ligne" alt="Votre menu gastronimique en ligne"></a>
+		<div class="header__logo">
+			<img src="./public/img/logo/ohmyfood@2x.svg" title="Réservez votre menu gastronomique en ligne"
+				alt="Votre menu gastronimique en ligne">
+
 		</div>
 
 		<!--   Sélection du lieu   -->
-		<div class="place-select">
-			<form method="POST" action="#" class="place-select__search">
-
-				<button class="place-select__icon" type="button" name="place-select__icon"
+		<form method="POST" action="#" class="header-select">
+			<div class="header-select-champ">
+				<button class="header-select-champ__icon" type="button" name="header-select-champ__icon"
 					title="Cliquer sur l'icône pour rechercher sur un plan">
 					<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
 				</button>
 
-				<input class="place-select__input" name="place-select__input" type="text" size="40" maxlength="100"
-					required placeholder="Paris, Belleville">
-
-				<div class="main-title">
-					<span>Reservez le menu qui vous convient</span>
-					<p class="main-title__p">Découvrez des restaurants d'exception, sélectionnés pour vous"</p>
-				</div>
-
-				<button class="place-select__btn" type="button" name="place-select__btn" aria-hidden="true"
+				<input class="header-select-champ__input" name="header-select-champ__input" type="text" size="14"
+					maxlength="100" required placeholder="Paris, Belleville">
+			</div>
+			<div class="main-title">
+				<h1 class="main-title__t">Réservez le menu qui vous convient</h1>
+				<p class="main-title__p">Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+			</div>
+			<div class="header-select-btn">
+				<button class="header-select-btn__btn" type="button" name="header-select-btn__btn" aria-hidden="true"
 					title="Cliquer sur le bouton pour explorer ce lieu">Explorer nos restaurants
 				</button>
-
-			</form>
-		</div>
+			</div>
+		</form>
 
 	</header>
 
 	<!--  Liste des explications  -->
 	<div id="explain-fonct" class="explain-fonct">
 
-		<fieldset class="explain-fonct__items">
+		<div class="explain-fonct__items">
 
 			<div class="explain-fonct__title">
 				<span>Fonctionnement</span>
@@ -60,7 +61,7 @@
 
 			<div class="explain-fonct__item">
 				<span><i class="fas fa-info explain-fonct__iconinfo"></i></span>
-				<span><i class="fas fa-mobile-alt explain-fonct_icone"></i></span>
+				<span><i class="fas fa-mobile-alt explain-fonct__icone"></i></span>
 				<form class="fonct-choisir" method="POST" action="#">
 					<input class="explain-fonct__input" type="submit" name="fonct-choisir"
 						value="Choisissez un restaurant" title="Cliquer pour choisir">
@@ -70,7 +71,7 @@
 
 			<div class="explain-fonct__item">
 				<span><i class="fas fa-info explain-fonct__iconinfo"></i></span>
-				<span><i class="fas fa-list-ul explain-fonct_icone"></i></span>
+				<span><i class="fas fa-list-ul explain-fonct__icone"></i></span>
 				<form class="fonct-composer" method="POST" action="#">
 					<input class="explain-fonct__input" type="submit" name="fonct-composer" value="Composez votre menu"
 						title="Cliquer pour choisir">
@@ -79,14 +80,14 @@
 
 			<div class="explain-fonct__item">
 				<span><i class="fas fa-info explain-fonct__iconinfo"></i></span>
-				<span><i class="fas fa-store explain-fonct_icone"></i></span>
+				<span><i class="fas fa-store explain-fonct__icone"></i></span>
 				<form class="fonct-choisir" method="POST" action="#">
 					<input class="explain-fonct__input" type="submit" name="fonct-deguster"
 						value="Déguster au restaurant" title="Cliquer pour choisir">
 				</form>
 			</div>
 
-		</fieldset>
+		</div>
 	</div>
 
 	<!-- Début affichage des restaurants -->
@@ -101,7 +102,7 @@
 			<div class="results-list__item">
 
 				<a href="./details.html" target="_blank" title="Cliquer pour afficher le menu, nouvel onglet">
-					<img class="results-list__pict"
+					<img class="results-list__img"
 						src="./public/img/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
 						alt="Table de La palette du goût">
 					<div class="results-list__new">
@@ -138,15 +139,15 @@
 			<ul>
 				<li>
 					<a href="#">
-						<i class="footer-nav__icon fas-utensils"></i>	
+						<i class="footer-nav__icon fas-utensils"></i>
 						<span class="footer-nav__optbold">
 							Proposer un restaurant
-						</span>	
+						</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<i class="footer-nav__icon fas-hands-helping"></i>	
+						<i class="footer-nav__icon fas-hands-helping"></i>
 						<span class="footer-nav__optbold">
 							Devenir partenaire
 						</span>
