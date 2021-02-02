@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<script src="https://kit.fontawesome.com/b336c3d0c9.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Shrickhand&display=swap"
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Shrikhand&display=swap"
 		rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Pascal Lorin">
@@ -17,115 +17,104 @@
 
 <body>
 	<!-- Exécution du spinner -->
+
 	<!-- Début du header -->
 	<header>
-		<!-- Affichage du logo -->
-		<div class="header__logo">
+		<div class="header-logo">
 			<img src="./public/img/logo/ohmyfood@2x.svg" title="Réservez votre menu gastronomique en ligne"
 				alt="Votre menu gastronimique en ligne">
-
 		</div>
-
-		<!--   Sélection du lieu   -->
-		<form method="POST" action="#" class="header-select">
-			<div class="header-select-champ">
-				<button class="header-select-champ__icon" type="button" name="header-select-champ__icon"
-					title="Cliquer sur l'icône pour rechercher sur un plan">
-					<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-				</button>
-
-				<input class="header-select-champ__input" name="header-select-champ__input" type="text" size="14"
-					maxlength="100" required placeholder="Paris, Belleville">
-			</div>
-			<div class="main-title">
-				<h1 class="main-title__t">Réservez le menu qui vous convient</h1>
-				<p class="main-title__p">Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-			</div>
-			<div class="header-select-btn">
-				<button class="header-select-btn__btn" type="button" name="header-select-btn__btn" aria-hidden="true"
-					title="Cliquer sur le bouton pour explorer ce lieu">Explorer nos restaurants
-				</button>
-			</div>
-		</form>
-
 	</header>
 
-	<!--  Liste des explications  -->
-	<div id="explain-fonct" class="explain-fonct">
-
-		<div class="explain-fonct__items">
-
-			<div class="explain-fonct__title">
-				<span>Fonctionnement</span>
-			</div>
-
-			<div class="explain-fonct__item">
-				<span><i class="fas fa-info explain-fonct__iconinfo"></i></span>
-				<span><i class="fas fa-mobile-alt explain-fonct__icone"></i></span>
-				<form class="fonct-choisir" method="POST" action="#">
-					<input class="explain-fonct__input" type="submit" name="fonct-choisir"
-						value="Choisissez un restaurant" title="Cliquer pour choisir">
-				</form>
-			</div>
-
-
-			<div class="explain-fonct__item">
-				<span><i class="fas fa-info explain-fonct__iconinfo"></i></span>
-				<span><i class="fas fa-list-ul explain-fonct__icone"></i></span>
-				<form class="fonct-composer" method="POST" action="#">
-					<input class="explain-fonct__input" type="submit" name="fonct-composer" value="Composez votre menu"
-						title="Cliquer pour choisir">
-				</form>
-			</div>
-
-			<div class="explain-fonct__item">
-				<span><i class="fas fa-info explain-fonct__iconinfo"></i></span>
-				<span><i class="fas fa-store explain-fonct__icone"></i></span>
-				<form class="fonct-choisir" method="POST" action="#">
-					<input class="explain-fonct__input" type="submit" name="fonct-deguster"
-						value="Déguster au restaurant" title="Cliquer pour choisir">
-				</form>
-			</div>
-
+	<!--   Sélection du lieu   -->
+	<section class="place-selection">
+		<div class="place-select">
+			<span class="place-select__icon">
+				<i class="fas fa-map-marker-alt"></i>
+			</span>
+			<input class="place-select__input" name="place-select__input" type="text" size="13" maxlength="100" required
+				placeholder="Paris, Belleville">
 		</div>
-	</div>
+	</section>
+
+	<section class="search">
+		<div class="search-title">
+			<div class="search-title__t">Réservez le menu qui vous convient</div>
+			<div class="search-title__p">Découvrez des restaurants d'exception, sélectionnés par nos soins.</div>
+		</div>
+		<a class="search__btn" title="Cliquer sur le bouton pour explorer ce lieu">
+			Explorer nos restaurants
+		</a>
+	</section>
+
+
+
+	<!--  Liste des explications  -->
+	<section class="fonct-items">
+		<h1 class="fonct-items__title">
+			<span>Fonctionnement</span>
+		</h1>
+
+		<a class="fonct-item" action="#" name="fonct-choisir">
+			<div class="fonct-item__number">1</div>
+			<div class=" fonct-item__icone">
+				<i class="fas fa-mobile-alt"></i>
+			</div>
+			<p class="fonct-item__lib">Choisissez un restaurant</p>
+		</a>
+
+		<a class="fonct-item" action="#" name="fonct-composer">
+			<div class="fonct-item__number">2</div>
+			<div class=" fonct-item__icone">
+				<i class="fas fa-list-ul"></i>
+			</div>
+			<div class="fonct-item__lib">
+				Composez votre menu
+			</div>
+		</a>
+
+		<a class="fonct-item" action="#" name="fonct-deguster">
+			<div class="fonct-item__number">3</div>
+			<div class=" fonct-item__icone fonct-item__icone__primary">
+				<i class="fas fa-store"></i>
+			</div>
+			<div class="fonct-item__lib">
+				Dégustez au restaurant
+			</div>
+		</a>
+	</section>
 
 	<!-- Début affichage des restaurants -->
 
-	<!-- Affichage des + populaires    -->
-	<section class="results-container">
-		<div class="results-list__title">
-			Restaurants
-		</div>
-		<div class="results-list">
+	<section class="restos">
+		<h1 class="restos__title">Restaurants</h1>
+		<div class="restos__grid">
 
-			<div class="results-list__item">
+			<div class="resto-card">
+				<a href="./pages/resto-1.html" target="_blank" title="Cliquer pour choisir votre menu, nouvel onglet">
+					<p>Nouveau</p>
 
-				<a href="./details.html" target="_blank" title="Cliquer pour afficher le menu, nouvel onglet">
-					<img class="results-list__img"
-						src="./public/img/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+					<img src="./public/img/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
 						alt="Table de La palette du goût">
-					<div class="results-list__new">
-						Nouveau
-					</div>
-					<div class="results-list__discribe">
-						<div class="results-list__name">
-							<h2>La palette du goût</h2>
-							<p class="results-list__place">
-								Mesnilmontant
-							</p>
-						</div>
 
-						<div class="results-list__heart">
-							<i class="fas fa-heart"></i>
-							<form class="mark-favorite" method="POST" action="#">
-								<input class="mark-favorite__input" type="submit" name="mark-favorite__1"
-									value="Marquer comme restaurant favori" title="Cliquer pour en faire un favori">
-							</form>
-						</div>
+					<div class="resto-card__pres">
+						<div class="resto-card__pres-name">La palette du goût</div>
+						<div class="resto-card__pres-place">Mesnilmontant</div>
 					</div>
 				</a>
+
+				<div class="love-btn">
+					<button>🤍</button>
+
+					<!--
+					<button><i class="fa fa-heart"></i></button>
+					<button><i class="fa fa-heart"></i></button>
+-->
+
+				</div>
 			</div>
+
+
 		</div>
 	</section>
 
