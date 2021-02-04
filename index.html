@@ -7,6 +7,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Shrikhand&display=swap"
 		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Pascal Lorin">
 	<meta name="description"
@@ -16,10 +17,19 @@
 </head>
 
 <body>
-	<!-- Exécution du spinner -->
+	<!-- Exécution du spinner
+	<div class="spinner-container">
+		<div class="spinner">
+			<div class="spinner-run">
+				ohmyfood
+			</div>
+		</div>
+	</div>
+ -->
+
 
 	<!-- Début du header -->
-	<header>
+	<header id="header">
 		<div class="header-logo">
 			<img src="./public/img/logo/ohmyfood@2x.svg" title="Réservez votre menu gastronomique en ligne"
 				alt="Votre menu gastronimique en ligne">
@@ -37,6 +47,7 @@
 		</div>
 	</section>
 
+	<!-- Affichage accroche et bouton de validation qui déclenche la recherche -->
 	<section class="search">
 		<div class="search-title">
 			<div class="search-title__t">Réservez le menu qui vous convient</div>
@@ -46,8 +57,6 @@
 			Explorer nos restaurants
 		</a>
 	</section>
-
-
 
 	<!--  Liste des explications  -->
 	<section class="fonct-items">
@@ -88,64 +97,73 @@
 
 	<section class="restos">
 		<h1 class="restos__title">Restaurants</h1>
-		<div class="restos__grid">
 
-			<div class="resto-card">
-				<a href="./pages/resto-1.html" target="_blank" title="Cliquer pour choisir votre menu, nouvel onglet">
-					<p>Nouveau</p>
+		<div class="resto-card">
+			<a href="./pages/resto-1.html" target="_blank" title="Cliquer pour choisir votre menu, nouvel onglet">
+				<p>Nouveau</p>
+				<img src="./public/img/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+					alt="Table de La palette du goût">
+				<div class="resto-card__pres">
+					<div class="resto-card__pres-name">La palette du goût</div>
+					<div class="resto-card__pres-place">Mesnilmontant</div>
+				</div>
+			</a>
 
-					<img src="./public/img/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-						alt="Table de La palette du goût">
+			<div class="love-btn">
+				<i class="material-icons">favorite_border</i>
+				<i class="material-icons">favorite_border</i>
+<!--			<i class="far fa-heart"></i>    -->
+			</div>
+<!--	 style="font-size:36px"
+				<button>🤍</button>
+				<button>🤍</button>
+-->
+			</div>
+		</div>
 
-					<div class="resto-card__pres">
-						<div class="resto-card__pres-name">La palette du goût</div>
-						<div class="resto-card__pres-place">Mesnilmontant</div>
-					</div>
-				</a>
 
-				<div class="love-btn">
-					<button>🤍</button>
+		<div class="resto-card">
+			<a href="./pages/resto-2.html" target="_blank" title="Cliquer pour choisir votre menu, nouvel onglet">
+				<!--					<p>Nouveau</p>
+-->
+				<img src="./public/img/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
+					alt="Table de La note enchantée">
 
-					<!--
-					<button><i class="fa fa-heart"></i></button>
-					<button><i class="fa fa-heart"></i></button>
+				<div class="resto-card__pres">
+					<div class="resto-card__pres-name">La note enchantée</div>
+					<div class="resto-card__pres-place">Charonne</div>
+				</div>
+			</a>
+			<div class="love-btn">
+				<button>🤍</button>
+				<button>🤍</button>
+			</div>
+		</div>
+
+				<!--
+					
 -->
 
-				</div>
-			</div>
-
-
-		</div>
 	</section>
 
 	<!-- Début du pied de page -->
 	<footer>
-		<div class="footer-title">
-			<img src="./public/img/logo/ohmyfood@2x.svg">
-		</div>
 
-		<div class="footer-nav">
-			<ul>
-				<li>
-					<a href="#">
-						<i class="footer-nav__icon fas-utensils"></i>
-						<span class="footer-nav__optbold">
-							Proposer un restaurant
-						</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i class="footer-nav__icon fas-hands-helping"></i>
-						<span class="footer-nav__optbold">
-							Devenir partenaire
-						</span>
-					</a>
-				</li>
-				<li><a href="#">Mentions légales</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</div>
+		<h3>ohmyfood</h3>
+
+		<ul>
+			<li>
+				<i class="fas fa-utensils"></i>
+				<a href="#">&nbspProposer un restaurant</a>
+			</li>
+			<li>
+				<i class="fas fa-hands-helping"></i>
+				<a href="#">Devenir partenaire</a>
+			</li>
+			<li><a href="#">Mentions légales</a></li>
+			<li><a href="mailto:contact@ohmyfoof.com">Contact</a></li>
+		</ul>
+
 	</footer>
 </body>
 
