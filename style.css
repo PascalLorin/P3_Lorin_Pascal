@@ -17,20 +17,28 @@
   }
 }
 @keyframes spinner-run {
-  0% {
+  from {
     visibility: visible;
     transform: rotate(0deg);
     text-align: center;
     font-size: 0.1rem;
   }
-  100% {
+  99% {
     visibility: visible;
     transform: rotate(1800deg);
     font-size: 2.5em;
   }
-  100% {
+  to {
     z-index: -1;
     display: none;
+  }
+}
+@keyframes love-btn-color {
+  from {
+    color: transparent;
+  }
+  to {
+    color: red;
   }
 }
 html {
@@ -143,13 +151,14 @@ h3 {
 
 .spinner-run {
   position: fixed;
+  display: block;
   width: 0.2rem;
   height: 0.2rem;
   color: black;
   animation-duration: 5s;
   transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
   transition-delay: 0.5s;
-  transform-origin: center center;
+  transform-origin: center;
   animation-name: spinner-run;
   visibility: hidden;
 }
@@ -194,8 +203,7 @@ h3 {
   align-items: center;
   padding-bottom: 7rem;
   animation-duration: 0.6s;
-  animation-timing-function: linear;
-  animation-name: search;
+  animation-timing-function: ease;
 }
 .search-title {
   margin-top: 4rem;
@@ -229,7 +237,7 @@ h3 {
 }
 .search a:hover, .search a:active {
   background: linear-gradient(to top left, #ff79da, #9356DC);
-  box-shadow: 0.5rem 0.5rem 1.5rem 0.5rem #301255;
+  box-shadow: 0.5rem 0.5rem 1.5rem 0.5rem #6023a9;
 }
 
 /******* FONCTIONNEMENT DU SITE  *******/
@@ -237,19 +245,21 @@ h3 {
   background-color: blank;
   margin: 3rem 1rem 2rem;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  grid-gap: 1rem;
 }
 .fonct-items__title {
   align-self: left;
   letter-spacing: -0.1rem;
-  margin-right: 2rem;
+  margin-bottom: 2rem;
 }
 
 .fonct-item {
   display: flex;
   flex-direction: row;
   height: 9rem;
-  width: 42rem;
+  max-width: 42rem;
   align-items: center;
   justify-content: left;
   border: none;
@@ -260,9 +270,10 @@ h3 {
   font-weight: 700;
   font-size: 2rem;
   margin-left: 1.5rem;
+  margin-right: 1.5rem;
   margin-bottom: 3rem;
   animation-duration: 0.4s;
-  animation-timing-function: linear;
+  animation-timing-function: ease;
 }
 .fonct-item__number {
   display: flex;
@@ -274,7 +285,6 @@ h3 {
   color: white;
   align-items: center;
   justify-content: center;
-  /*    z-index: 9;*/
   position: relative;
   left: -1.5rem;
 }
@@ -301,13 +311,16 @@ h3 {
 /******   AFFICHAGE / SELECTION DES RESTAURANTS  *******/
 .restos {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column;
   background-color: #f5f5f5;
   padding: 2rem;
+  grid-gap: 1rem;
 }
 .restos__title {
+  letter-spacing: -0.1rem;
   padding-top: 3rem;
   padding-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .resto-card {
@@ -315,7 +328,7 @@ h3 {
   box-shadow: 0.3rem 0.5rem 1rem #cfcfcf;
   border-radius: 2rem;
   margin-bottom: 3rem;
-  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .resto-card:hover, .resto-card:active {
   box-shadow: 0.5rem 1rem 1rem #9356DC;
@@ -369,44 +382,28 @@ h3 {
   font-size: 3rem;
   cursor: pointer;
 }
-.resto-card .love-btn:hover i:nth-child(1) {
-  opacity: 0;
-}
-.resto-card .love-btn:hover i:nth-child(2) {
-  opacity: 1;
-}
 
 /*******   SELECTION RESTAURANT(S) FAVORI(S)   ********/
-.love-btn i {
+.love-btn {
   position: relative;
-  cursor: pointer;
   opacity: 1;
-  transition: color 2s cubic-bezier(0.3, 0.82, 0.165, 1);
+  animation-duration: 2s cubic-bezier(0.3, 0.82, 0.165, 1);
+  animation-name: love-btn-color;
 }
 .love-btn i:nth-child(2) {
   opacity: 0;
-  background-size: 300%;
   top: 0%;
   left: 0%;
   position: absolute;
-  background: red;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: red;
+}
+.love-btn:hover i:nth-child(1) {
+  opacity: 0;
+}
+.love-btn:hover i:nth-child(2) {
+  opacity: 1;
 }
 
-/*
-            &::before {
-            content: "\f004";   
-            font-weight: bold;
-            transition: color 2s  cubic-bezier(0.3, 0.82, 0.165, 1);
-        }
-
-        &:hover::before {
-            color: red;
-            cursor: pointer;
-        }
-    }
-*/
 /****** Footer : menu de bas de page ******/
 footer {
   background-color: #353535;
@@ -446,6 +443,35 @@ footer ul li a i {
   font-size: 1.5rem;
   font-weight: 900;
   color: #fff;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fonct-items__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    grid-gap: 1rem;
+  }
+
+  .restos__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+@media screen and (min-width: 991px) {
+  .fonct-items__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: row;
+    grid-gap: 1rem;
+  }
+
+  .restos__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

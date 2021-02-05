@@ -20,22 +20,32 @@
 }
 
 @keyframes spinner-run {
-    0% {
+    from {
         visibility: visible;
         transform: rotate(0deg);
         text-align: center;
         font-size: 0.1rem;
     }
 
-    100% {
+    99% {
         visibility: visible;
         transform: rotate(1800deg);
         font-size: 2.5em;
     }
 
-    100% {
+    to {
         z-index: -1;
         display: none;
+    }
+}
+
+@keyframes love-btn-color {
+    from {
+        color: transparent;
+    }
+
+    to {
+        color: red;
     }
 }
 

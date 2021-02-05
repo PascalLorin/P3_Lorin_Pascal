@@ -19,13 +19,14 @@
 
 .spinner-run {
     position: fixed;
+    display: block;
     width: 0.2rem;
     height: 0.2rem;
     color: black;
     animation-duration: 5s;
     transition-timing-function: cubic-bezier(.42, 0, .58, 1);
     transition-delay: 0.5s;
-    transform-origin: center center;
+    transform-origin: center;
     animation-name: spinner-run;
     visibility: hidden;
 }
@@ -72,8 +73,8 @@
     align-items: center;
     padding-bottom: 7.0rem;
     animation-duration: 0.6s;
-    animation-timing-function: linear;
-    animation-name: search;
+    animation-timing-function: ease;
+
 
     &-title {
         margin-top: 4.0rem;
@@ -111,7 +112,7 @@
         &:hover,
         &:active {
             background: linear-gradient(to top left, $colour-secondary, $colour-primary);
-            box-shadow: 0.5rem 0.5rem 1.5rem 0.5rem darken($colour-primary, 40%);
+            box-shadow: 0.5rem 0.5rem 1.5rem 0.5rem darken($colour-primary, 20%);
         }
     }
 }
@@ -121,13 +122,14 @@
     background-color: blank;
     margin: 3.0rem $layout-margin 2.0rem;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-
+    grid-gap: $grid-gutter;
 
     &__title {
         align-self: left;
         letter-spacing: -0.1rem;
-        margin-right: 2.0rem;
+        margin-bottom: 2.0rem;
     }
 }
 
@@ -135,7 +137,7 @@
     display: flex;
     flex-direction: row;
     height: 9.0rem;
-    width: 42rem;
+    max-width: 42rem;
     align-items: center;
     justify-content: left;
     border: none;
@@ -146,9 +148,10 @@
     font-weight: 700;
     font-size: 2.0rem;
     margin-left: 1.5rem;
+    margin-right: 1.5rem;
     margin-bottom: 3.0rem;
     animation-duration: 0.4s;
-    animation-timing-function: linear;
+    animation-timing-function: ease;
 
     &__number {
         display: flex;
@@ -160,7 +163,6 @@
         color: white;
         align-items: center;
         justify-content: center;
-        /*    z-index: 9;*/
         position: relative;
         left: -1.5rem;
     }
@@ -194,13 +196,16 @@
 /******   AFFICHAGE / SELECTION DES RESTAURANTS  *******/
 .restos {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column;
     background-color: $colour-lightgrey;
     padding: $grid-gutter*2;
+    grid-gap: $grid-gutter;
 
     &__title {
+        letter-spacing: -0.1rem;
         padding-top: 3.0rem;
-        padding-bottom: 1.0rem
+        padding-bottom: 1.0rem;
+        margin-bottom: 2.0rem;
     }
 }
 
@@ -209,7 +214,7 @@
     box-shadow: 0.3rem 0.5rem 1.0rem darken($colour-lightgrey, 15%);
     border-radius: 2.0rem;
     margin-bottom: $grid-gutter*3;
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 
     &:hover,
     &:active {
@@ -271,50 +276,35 @@
         background-color: #fff;
         font-size: 3.0rem;
         cursor: pointer;
-    
-        &:hover i:nth-child(1) {
-            opacity: 0;
-        }
-    
-        &:hover i:nth-child(2) {
-            opacity: 1;
-        }
-    
     }
 }
 
 /*******   SELECTION RESTAURANT(S) FAVORI(S)   ********/
-.love-btn i {
+.love-btn {
     position: relative;
-    cursor: pointer;
     opacity: 1;
-    transition: color 2s cubic-bezier(0.3, 0.82, 0.165, 1);
+    animation-duration: 2s cubic-bezier(0.3, 0.82, 0.165, 1);
+    animation-name: love-btn-color;
 
-    &:nth-child(2) {
+    & i:nth-child(2) {
         opacity: 0;
-        background-size: 300%;
         top: 0%;
         left: 0%;
         position: absolute;
-        background: red;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: red;
+    }
+
+    &:hover {
+
+        & i:nth-child(1) {
+            opacity: 0;
+        }
+
+        & i:nth-child(2) {
+            opacity: 1;
+        }
     }
 }
-
-/*
-            &::before {
-            content: "\f004";   
-            font-weight: bold;
-            transition: color 2s  cubic-bezier(0.3, 0.82, 0.165, 1);
-        }
-
-        &:hover::before {
-            color: red;
-            cursor: pointer;
-        }
-    }
-*/
 
 /****** Footer : menu de bas de page ******/
 footer {
@@ -362,5 +352,37 @@ footer {
                 }
             }
         }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    .fonct-items__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        grid-gap: $grid-gutter;  
+    }
+
+    .restos__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: $grid-gutter;  
+    }
+}
+
+@media screen and (min-width: 991px) {
+
+    .fonct-items__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        flex-direction: row;
+        grid-gap: $grid-gutter;  
+    }
+
+    .restos__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: $grid-gutter;
     }
 }
