@@ -2,50 +2,65 @@
 /**** Transition du background-color en rotaton  ****/
 /**** Agrandissement du logo du site en rotation ****/
 
-@keyframes spinner-container {
+@keyframes spinner-background {
     0% {
         background-color: $colour-secondary;
         z-index: 1;
     }
 
-    99% {
-        z-index: 1;
+    80% {
         background-color: $colour-primary;
+        z-index: 1;
     }
 
     100% {
         z-index: -1;
-        display: none;
     }
 }
 
 @keyframes spinner-run {
-    from {
+    0% {
+        z-index: 1;
         visibility: visible;
         transform: rotate(0deg);
-        text-align: center;
-        font-size: 0.1rem;
+        font-size:0.1rem;
     }
 
-    99% {
-        visibility: visible;
+    98% {
+        z-index: 1;
         transform: rotate(1800deg);
-        font-size: 2.5em;
+        font-size: 4.0rem;
     }
-
-    to {
+    
+    99% {
         z-index: -1;
-        display: none;
+        visibility: hidden;
     }
 }
 
 @keyframes love-btn-color {
     from {
         color: transparent;
+        opacity: 0;
     }
 
     to {
-        color: red;
+        color: $colour-primary;
+        opacity: 1;
+    }
+}
+
+@keyframes lib-min {
+    from {
+        top: 40px;
+        opacity: 0;
+
+    }
+
+    to {
+        top: 0px;
+        opacity: 1;
+
     }
 }
 
