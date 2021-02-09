@@ -1,12 +1,8 @@
 /**** Header commun  ****/
 .header {
-    /*
-    position: absolute;
-    top:0;
-    left:0;
-    */
     background-color: white;
-    height: auto;
+    display: flex;
+    flex-direction: row;
 
     &-logo {
         display: flex;
@@ -14,6 +10,16 @@
         padding-bottom: 1.0rem;
         align-items: center;
         justify-content: center;
+    }
+
+    & a>i {
+        position: absolute;
+        top: 2.0rem;
+        left: 2.0rem;
+        font-size: 4.0rem;
+        font-weight: bold;
+        color: black;
+        align-items: center;
     }
 
     /**** Lien header "retour" ****/

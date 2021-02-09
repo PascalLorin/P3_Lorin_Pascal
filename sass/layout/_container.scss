@@ -16,11 +16,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width:20rem;
-    height:5rem;
+    width: 20rem;
+    height: 5rem;
     animation-duration: 5.5s;
     transition-timing-function: cubic-bezier(.5, .5, .58, 1);
-    animation-name: spinner-run;   
+    animation-name: spinner-run;
 }
 
 .spinner-run {
@@ -235,7 +235,7 @@
     & img {
         width: 100%;
         height: 21.0rem;
-        object-fit: cover;
+        object-fit: scale-down;
         border-radius: 2.0rem 2.0rem 0 0;
     }
 
@@ -289,25 +289,19 @@
 .love-btn {
     position: relative;
     opacity: 1;
-    animation-duration: 2s cubic-bezier(0.3, 0.82, 0.165, 1);
-    animation-name: love-btn-color;
 
     & i:nth-child(2) {
         opacity: 0;
         top: 0%;
         left: 0%;
         position: absolute;
+        transition: opacity 2s cubic-bezier(0.3, 0.82, 0.165, 1);
         color: $colour-primary;
     }
 
     &:hover {
 
-        & i:nth-child(1) {
-            opacity: 0;
-        }
-
         & i:nth-child(2) {
-            color: aqua;
             opacity: 1;
         }
     }

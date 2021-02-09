@@ -1,50 +1,38 @@
 /* section entête */
 .entete {
+    position: relative;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    height: 28.0rem;
     align-items: center;
-    padding: 3.0rem 1.5rem 3.0rem 1rem;
-    border-top-left-radius: 3.0rem;
-    border-top-right-radius: 3.0rem;
 
-
-    &-img {
+    & img {
         width: 100%;
         height: 28.0rem;
-        position: relative;
-        top: 0;
-        left: 0;
-
-        & i {
-            object-fit: cover;
-        }
+        object-fit: cover;
     }
 
     &-txt {
         position: absolute;
-        bottom: 10%;
+        bottom: 0;
+        left: 0;
+        background-color: $colour-lightgrey;
         width: 100%;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
         align-items: center;
-        padding: $grid-gutter*6 $grid-gutter*2;
+        padding: $grid-gutter*2 $grid-gutter*2;
         border-radius: 3.0rem 3.0rem 0 0;
         font-family: 'Shrikhand';
         font-size: 3.0rem;
-        line-height: 3.7rem;
 
         & .love-btn {
             position: absolute;
-            bottom: 2.5rem;
+            bottom: 2.0rem;
             right: 3.0rem;
-            height: 3.0rem;
             width: 3.0rem;
+            line-height: 3.0rem;
+            font-size: 3.0rem;
             border: none;
             border-radius: 1.5rem;
-            background-color: #fff;
-            font-size: 3.0rem;
+            background-color: $colour-lightgrey;
             cursor: pointer;
         }
     }
