@@ -1,13 +1,28 @@
+/*  Header  */
+.top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &>a {
+        position: absolute;
+        left: 2.0rem;
+        font-size: 2.0rem;
+    }
+}
+
 /* section entête */
 .entete {
     position: relative;
     width: 100%;
-    height: 28.0rem;
+    height: 36.0rem;
     align-items: center;
 
     & img {
         width: 100%;
-        height: 28.0rem;
+        height: 36.0rem;
         object-fit: cover;
     }
 
@@ -18,7 +33,7 @@
         background-color: $colour-lightgrey;
         width: 100%;
         align-items: center;
-        padding: $grid-gutter*2 $grid-gutter*2;
+        padding: $grid-gutter*4 $grid-gutter*2 $grid-gutter;
         border-radius: 3.0rem 3.0rem 0 0;
         font-family: 'Shrikhand';
         font-size: 3.0rem;
@@ -36,19 +51,32 @@
             cursor: pointer;
         }
     }
+}
 
-    /* Section menu */
-    .menu {
-        background-color: $colour-lightgrey;
-        padding: $grid-gutter*2;
+/****   Section menu   ****/
+.menu {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $grid-gutter*2;
+    background-color: $colour-lightgrey;
+    padding-top: 2.0rem;
+    padding-left: $grid-gutter*2;
+    padding-right: $grid-gutter*2;
 
-        &-titre {
-            padding-bottom: $grid-gutter;
+    /*  Partie du menu  */
+    &-part {
+        display: block;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: $grid-gutter*2;
 
-            & h2 {
-                font-size: 2.2rem;
-                font-weight: 400;
-            }
+        &__titre {
+            padding-bottom: $grid-gutter*2;
+            font-size: 1.8rem;
+            line-height: 3.0rem;
+            font-weight: 500;
+            letter-spacing: -0.1rem;
 
             & hr {
                 height: 0.4rem;
@@ -58,276 +86,92 @@
             }
         }
 
-        &-part {
-            padding-bottom: 3.0rem;
+        /* Description des plats */
+        &__plat {
+            position: relative;
+            display: flex;
+            flex-flow: row nowrap;
+            overflow: hidden;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 1.5rem;
+            width: 100%;
+            max-width: 42.0rem;
+            height: 6.0rem;
+            border: none;
+            border-radius: 1.5rem;
+            margin-bottom: $grid-gutter*2;
+            background-color: #fff;
+            box-shadow: 0 0 0.5rem 0.5rem darken($colour-lightgrey, 15);
+            transition: all 0.5s ease-in-out;
 
-            &-plat {
-                display: flex;
-                flex-flow: row nowrap;
-                position: relative;
-                max-width: 42.0rem;
-                height: 7.0rem;
-                border-radius: 1.5rem;
-                padding: $grid-gutter*2;
-                background-color: #fff;
-                box-shadow: 0 0 0.5rem 0.5rem darken($colour-lightgrey, 15);
+            &-txt {
+                display: block;
+                width: 100%;  
+                flex-direction: column;
+                overflow: hidden;
                 justify-content: space-between;
                 align-items: center;
-                overflow: hidden;
-                opacity: 0;
-                transition: all 0.5s;
-                animation: lib-min 0.7s ease-in both, top 0.5s linear;
+                line-height: 2.5rem;
+                padding-left: $grid-gutter;
 
-
-                &:nth-of-type(1) {
-                    animation-delay: 0s;
+                & h3 {
+                    padding-top: 0.5rem;
+/*                    width: 100%;  */
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
 
-                &:nth-of-type(2) {
-                    animation-delay: 0.1s;
-                }
+                &-d {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
 
-                &:nth-of-type(3) {
-                    animation-delay: 0.2s;
-                }
+                    & p {
+                        white-space: nowrap;
+/*                        width: 100%;  */
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
 
+                    & span {
+                        font-size: 1.5rem;
+                        font-weight: 900;
+                        padding-right: 1.5rem;
+                    }
+                }
             }
 
+            &-check {
+                position: relative;
+                right: -7.0rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 0.0rem;
+                font-size: 2.0rem;
+                color: #fff;
+                background-color: $colour-tertiaire;
+                border-top-right-radius: 1.5rem;
+                border-bottom-right-radius: 1.5rem;
+            }
         }
     }
 }
 
-.menu-part-plat .text {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    height: 100%;
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    transition: all 0.5s;
-}
 
-.menu-part-plat .text:hover {
-    width: 82%;
-}
+.menu-part__plat:hover {
+    cursor: grab;
 
-.menu-part-plat .text h3 {
-    width: 100%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.description {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-}
-
-@media (max-width:400px) {
-    .menu-part-plat .text:hover {
-        width: 80%;
-        /* font-size: 13px; */
-    }
-}
-
-@media (max-width:300px) {
-    .menu-part-plat .text:hover {
-        width: 75%;
-        /* font-size: 13px; */
-    }
-}
-
-@media (min-width: 700px) {
-    .entete {
-        justify-content: space-around !important;
+    .menu-part__plat-check {
+        animation: min-plat 2.0s;
     }
 
-    .titre {
-        width: 70%;
-        margin: 0 auto;
+    & i {
+        animation-delay: 1.0s;
+        animation: rotate-check 2.5s;
     }
-}
-
-.menu-part-plat .text p:nth-child(2n+1) {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    margin-right: 15px;
-}
-
-.menu-part-plat .container-check {
-    height: 100%;
-    position: relative;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    transition: all 0.5s ease-in;
-}
-
-.menu-part-plat .check {
-    position: absolute;
-    visibility: hidden;
-    background-color: #99E2D0;
-    color: #fff;
-    left: 100%;
-    height: 100%;
-    width: 75px;
-    font-size: 22px;
-    padding: 24.2px 20px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    transition: all 0.5s ease-in;
-}
-
-
-
-.menu-part-plat:hover i {
-    -webkit-animation: rotation 0.4s linear 0.3s;
-    animation: rotation 0.4s linear 0.3s;
-}
-
-@-webkit-keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.menu-part-plat:hover .container-check {
-    left: 0%;
-    width: 75px;
-    /* width: 65px; */
-}
-
-.menu-part-plat:hover .check {
-    left: 0%;
-    visibility: visible;
-    transition: left 0.5s ease-in;
-}
-
-/* btn commander */
-
-.commander {
-    width: 100%;
-    background-color: #f6f6f6;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px 10px;
-    font-family: roboto;
-}
-
-.commander a {
-    width: 150px;
-    font-size: 16px;
-    margin: 5px 0px 40px 0px;
-    padding: 15px 35px 15px 35px;
-    border: none;
-    border-radius: 30px;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 0px 0px 15px 1.5px #000;
-    background-size: 400%;
-    /* background-image: -webkit-gradient(linear ,left top, right top ,from(#FF79DA), to(#9356DC)); */
-    background-image: linear-gradient(90deg, #FF79DA, #9356DC);
-    background-position: 80%;
-    transition: all 0.5s;
-    background-repeat: no-repeat;
-
-}
-
-.commander a:hover {
-
-    /* l'effet de saut direct à l'animation est du au fait 
-    que grandient n'est pas supporter par les navigateurs 
-    avec la proprieté transition */
-    /*   Astuces usage des gradient avec les transitions   */
-    /* https://iamvdo.me/blog/astuce-utiliser-les-transitions-css-sur-les-degrades */
-    /* https://stackoverflow.com/questions/17952468/css-background-gradient-transition-not-working */
-
-    /* background-image: linear-gradient(to left,#FDA7DF,#9980FA); */
-    background-position: 30%;
-    box-shadow: 0px 0px 20px 1.5px #000;
-
-
-
-    /* animation-name: gradient-anim;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards; */
-    /* background-image: linear-gradient(80deg, #ef91de, #a162db); */
-}
-
-/* @keyframes gradient-anim{
-    from {
-        background-size: 150% 150%;
-        background-image: linear-gradient(180deg, #ef91de, #a162db);      
-    } to {
-        background-size: 100% 100%;
-        background-image: linear-gradient(80deg, #a162db, #ef91de);
-    }
-} */
-
-
-
-.commander>a,
-.commander>a:visited {
-    color: #fff;
-    text-decoration: none;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: auto;
-}
-
-
-/*   FOOTER   */
-
-footer {
-    background-color: #353535;
-    padding: 30px;
-}
-
-footer h2 {
-    color: #fff;
-    font-family: shirkhand;
-    margin-bottom: 20px;
-    font-weight: 400;
-}
-
-footer ul {
-    list-style: none;
-    color: #fff;
-}
-
-footer ul li {
-    margin: 10px 0px;
-}
-
-footer ul li a {
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-footer ul li i {
-    padding-right: 5px;
 }
