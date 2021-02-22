@@ -38,7 +38,7 @@
         font-size: 0.01rem;
         z-index: -1;
         visibility: hidden;
-        display:none;
+        display: none;
     }
 }
 
@@ -54,24 +54,51 @@
     }
 }
 
+@keyframes aff-fondu {
+    0% {
+        transform: translateY(2.0rem);
+        opacity: 0;
+    }
+
+    75% {
+        transform: translateY(0);
+    }
+
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes btn-popup {
+    0% {
+        width: 100%;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        width: 20.0rem;
+    }
+}
+
 @keyframes min-plat {
     0% {
         transform: translateX(0);
-        width:0.0rem;
     }
 
     100% {
         transform: translateX(-7.0rem);
-        width:7.0rem;
     }
 }
 
 @keyframes rotate-check {
-    0% {
+    from {
         transform: rotate(0);
     }
 
-    100% {
+    to {
         transform: rotate(360°);
     }
 }
