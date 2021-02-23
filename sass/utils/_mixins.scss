@@ -1,5 +1,5 @@
 /**** Déroulement du spinner                     ****/
-/**** Transition du background-color en rotaton  ****/
+/**** Transition couleur du background-color     ****/
 /**** Agrandissement du logo du site en rotation ****/
 
 @keyframes spinner-background {
@@ -14,9 +14,9 @@
     }
 
     100% {
+        display: none;
         background-color: $colour-primary;
         z-index: -1;
-        display: none;
     }
 }
 
@@ -34,11 +34,11 @@
     }
 
     100% {
+        display: none;
         transform: rotate(1800deg);
         font-size: 0.01rem;
         z-index: -1;
         visibility: hidden;
-        display: none;
     }
 }
 
@@ -80,25 +80,5 @@
     100% {
         opacity: 1;
         width: 20.0rem;
-    }
-}
-
-@keyframes min-plat {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-7.0rem);
-    }
-}
-
-@keyframes rotate-check {
-    from {
-        transform: rotate(0);
-    }
-
-    to {
-        transform: rotate(360°);
     }
 }

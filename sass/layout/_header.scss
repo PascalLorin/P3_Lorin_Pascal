@@ -3,14 +3,8 @@
     background-color: white;
     display: flex;
     flex-direction: row;
-
-    &-logo {
-        display: flex;
-        padding-top: 1.0rem;
-        padding-bottom: 1.0rem;
-        align-items: center;
-        justify-content: center;
-    }
+    padding-top: 1.0rem;
+    padding-bottom: 1.0rem;
 
     & a>i {
         position: absolute;
@@ -22,19 +16,14 @@
         align-items: center;
     }
 
-    /**** Lien header "retour" ****/
-    /*    & i {
-        font-size: 4.0rem;
-        position: absolute;
-        top: 1.0rem;
-        left: 2.0rem;
-        color: black;
+    &-logo {
+        display: flex;
         align-items: center;
-    }
+        justify-content: center;
 
-    & a:hover {
-        color: $colour-primary;
-        text-decoration: none;
+        &>h1 {
+            font-family: Shrikhand;
+            text-align: center;
+        }
     }
-    */
 }

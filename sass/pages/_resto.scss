@@ -11,6 +11,11 @@
         left: 2.0rem;
         font-size: 2.0rem;
     }
+
+    &>h1 {
+        font-family: Shrikhand;
+        text-align: center;
+    }
 }
 
 /* section entête */
@@ -33,29 +38,42 @@
         background-color: $colour-lightgrey;
         width: 100%;
         align-items: center;
+        justify-content: center;
         padding: $grid-gutter*4 $grid-gutter*2 $grid-gutter;
         border-radius: 3.0rem 3.0rem 0 0;
         font-family: 'Shrikhand';
         font-size: 3.0rem;
 
+        @media screen and (max-width:360px) {
+            font-size: 2.5rem;
+            text-wrap: wrap;
+        }
+
         & .love-btn {
             position: absolute;
-            bottom: 2.0rem;
+            bottom: 1.5rem;
             right: 3.0rem;
             width: 3.0rem;
+            align-items: center;
+            justify-content: center;
             line-height: 3.0rem;
             font-size: 3.0rem;
             border: none;
             border-radius: 1.5rem;
             background-color: $colour-lightgrey;
             cursor: pointer;
+
+            @media screen and (max-width:360px) {
+                position: absolute;
+                bottom: 1.0rem;
+                font-size: 2.5rem;
+            }
         }
     }
 }
 
 /****   Section menu   ****/
 .menu {
-    position: relative;
     background-color: $colour-lightgrey;
     padding-top: 2.0rem;
     padding-left: $grid-gutter;
@@ -63,11 +81,10 @@
 
     /*  Partie du menu  */
     &-part {
-        display: block;
         flex-direction: column;
         width: 100%;
         margin-bottom: $grid-gutter*2;
-mation: aff-fondu 1.5s 0.5s ease-in-out both;
+        animation: aff-fondu 1.5s 0.5s ease-in-out both;
 
         @for $i from 1 through 3 {
             &:nth-of-type(#{$i}) {
@@ -90,14 +107,14 @@ mation: aff-fondu 1.5s 0.5s ease-in-out both;
             }
         }
 
-        /* Description des plats */
+        /* card plat */
         &__plat {
-            display: flex;
             flex-flow: row nowrap;
+            align-content: flex-start;
             overflow: hidden;
             border-radius: 1.5rem;
             width: 100%;
-            max-width: 42.0rem;
+            /* max-width: 42.0rem; */
             height: 7.0rem;
             margin-bottom: $grid-gutter*2;
             background-color: #fff;
@@ -110,34 +127,25 @@ mation: aff-fondu 1.5s 0.5s ease-in-out both;
                 }
             }
 
-            &:hover {
-                cursor: grab;
-
-                .menu-part__plat-check {
-                    transition: min-plat 2.0s ease-in-out;
-
-                    & i {
-                        transition: rotate-check 2.0s ease-in-out;
-                    }
-                }
-            }
-
             &-txt {
                 display: flex;
-                flex-direction: column;
                 width: 100%;
                 height: 100%;
-                line-height: 3.5rem;
+                flex-direction: column;
+                line-height: 2.5rem;
+                padding-top: $grid-gutter;
                 padding-left: $grid-gutter;
-                transition: all 2.0s;
-                border: solid 1px black;
 
-                & h3 {
+                &-t {
+                    display: flex;
                     width: 100%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    border: solid 1px black;
+                    padding-right: 1.5rem;
+
+                    & h3 {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
 
                 &-d {
@@ -145,7 +153,6 @@ mation: aff-fondu 1.5s 0.5s ease-in-out both;
                     flex-flow: row nowrap;
                     width: 100%;
                     justify-content: space-between;
-                    border: solid 1px black;
 
                     & p {
                         white-space: nowrap;
@@ -156,34 +163,63 @@ mation: aff-fondu 1.5s 0.5s ease-in-out both;
                     & span {
                         font-size: 1.5rem;
                         font-weight: 900;
+                        margin-left: 0.5rem;
                         padding-right: 1.5rem;
                     }
                 }
             }
 
             &-check {
-                position: relative;
-                right: -7rem;
+                position: absolute;
+                bottom: 0;
+                right: -7.0rem;
                 display: flex;
-                border: solid 2px black;
                 height: 100%;
                 width: 7.0rem;
                 border-top-right-radius: 1.5rem;
                 border-bottom-right-radius: 1.5rem;
-                /*    transition: all 2.0s ease-in-out;  */
-
-                &-icon {
-                    display: flex;
-                    height: 100%;
-                    width: 100%;
-                    font-size: 2.0rem;
-                    align-items: center;
-                    justify-content: center;
-                    color: #fff;
-                    background-color: $colour-tertiaire;
-                    transition: all 2.0s ease-in-out;
-                }
+                font-size: 2.0rem;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                background-color: $colour-tertiaire;
             }
+        }
+    }
+}
+
+
+.menu-part__plat:hover {
+    cursor: grab;
+
+    .menu-part__plat-txt {
+        transition: all 2.0s ease-in-out;
+
+        @media screen and (max-width:321px) {
+            width: 70%;
+        }
+
+        @media screen and (max-width:421px) {
+            width: 75%;
+        }
+
+        @media screen and (max-width:480px) {
+            width: 80%;
+        }
+
+        @media screen and (min-width:481px) {
+            width: 88%;
+        }
+    }
+
+    .menu-part__plat-check {
+        transform: translateX(-7.0rem);    
+        transition: transform ease-in-out 2.0s;
+
+        & i {
+            transform: rotate(360deg);
+            transition-delay: 0.5s;
+            transition: transform ease-in-out 2.0s;
         }
     }
 }
