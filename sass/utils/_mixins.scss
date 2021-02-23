@@ -22,22 +22,26 @@
 
 @keyframes spinner-run {
     0% {
-        z-index: 1;
+        visibility: hidden;
         transform: rotate(0deg);
         font-size: 0.1rem;
     }
 
     80% {
+        visibility: visible;
         z-index: 1;
         transform: rotate(1800deg);
         font-size: 4.0rem;
     }
 
-    100% {
+    95% {
         display: none;
         transform: rotate(1800deg);
-        font-size: 0.01rem;
-        z-index: -1;
+        visibility: hidden;
+    }
+
+    100% {
+        display: none;
         visibility: hidden;
     }
 }

@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation-duration: 5s;
+    animation-duration: 4s;
     animation-timing-function: ease-in-out;
     animation-name: spinner-background;
 }
@@ -18,8 +18,8 @@
     justify-content: center;
     width: 20rem;
     height: 5rem;
-    animation-delay: 1.0s;
-    animation-duration: 5s;
+    animation-delay: 0.20s;
+    animation-duration: 3.0s;
     transition-timing-function: cubic-bezier(.5, .5, .58, 1);
     animation-name: spinner-run;
 }
@@ -127,7 +127,7 @@
 
 /******* FONCTIONNEMENT DU SITE  *******/
 .fonct-items {
-    background-color: blank;
+    background-color: #fff;
     margin: 3.0rem $layout-margin 2.0rem;
     display: flex;
     flex-direction: column;
@@ -135,7 +135,7 @@
     grid-gap: $grid-gutter;
 
     &__title {
-        align-self: left;
+        align-items: left;
         letter-spacing: -0.1rem;
         margin-bottom: 2.0rem;
     }

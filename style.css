@@ -19,20 +19,23 @@
 }
 @keyframes spinner-run {
   0% {
-    z-index: 1;
+    visibility: hidden;
     transform: rotate(0deg);
     font-size: 0.1rem;
   }
   80% {
+    visibility: visible;
     z-index: 1;
     transform: rotate(1800deg);
     font-size: 4rem;
   }
-  100% {
+  95% {
     display: none;
     transform: rotate(1800deg);
-    font-size: 0.01rem;
-    z-index: -1;
+    visibility: hidden;
+  }
+  100% {
+    display: none;
     visibility: hidden;
   }
 }
@@ -187,7 +190,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-timing-function: ease-in-out;
   animation-name: spinner-background;
 }
@@ -199,8 +202,8 @@ h3 {
   justify-content: center;
   width: 20rem;
   height: 5rem;
-  animation-delay: 1s;
-  animation-duration: 5s;
+  animation-delay: 0.2s;
+  animation-duration: 3s;
   transition-timing-function: cubic-bezier(0.5, 0.5, 0.58, 1);
   animation-name: spinner-run;
 }
@@ -299,7 +302,7 @@ h3 {
 
 /******* FONCTIONNEMENT DU SITE  *******/
 .fonct-items {
-  background-color: blank;
+  background-color: #fff;
   margin: 3rem 1rem 2rem;
   display: flex;
   flex-direction: column;
@@ -307,7 +310,7 @@ h3 {
   grid-gap: 1rem;
 }
 .fonct-items__title {
-  align-self: left;
+  align-items: left;
   letter-spacing: -0.1rem;
   margin-bottom: 2rem;
 }
@@ -545,7 +548,7 @@ footer ul li a i {
 @media screen and (max-width: 360px) {
   .entete-txt {
     font-size: 2.5rem;
-    text-wrap: wrap;
+    wrap: wrap;
   }
 }
 .entete-txt .love-btn {
@@ -566,6 +569,7 @@ footer ul li a i {
   .entete-txt .love-btn {
     position: absolute;
     bottom: 1rem;
+    right: 2rem;
     font-size: 2.5rem;
   }
 }

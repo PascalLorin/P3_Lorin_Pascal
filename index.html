@@ -34,7 +34,7 @@
 		</header>
 
 		<!--   Sélection du lieu   -->
-		<section class="place-selection">
+		<div class="place-selection">
 			<div class="place-select">
 				<span class="place-select__icon">
 					<i class="fas fa-map-marker-alt"></i>
@@ -42,10 +42,10 @@
 				<input class="place-select__input" name="place-select__input" type="text" size="13" maxlength="100"
 					required placeholder="Paris, Belleville">
 			</div>
-		</section>
+		</div>
 
 		<!-- Affichage accroche et bouton de validation qui déclenche la recherche -->
-		<section class="search">
+		<div class="search">
 			<div class="search-title">
 				<div class="search-title__t">Réservez le menu qui vous convient</div>
 				<div class="search-title__p">Découvrez des restaurants d'exception, sélectionnés par nos soins.</div>
@@ -53,10 +53,10 @@
 			<a class="search__btn" title="Cliquer sur le bouton pour explorer ce lieu">
 				Explorer nos restaurants
 			</a>
-		</section>
+		</div>
 
 		<!--  Liste des explications  -->
-		<section class="fonct-items">
+		<div class="fonct-items">
 
 			<h1 class="fonct-items__title">
 				<span>Fonctionnement</span>
@@ -64,7 +64,7 @@
 
 			<div class="fonct-items__grid">
 
-				<a class="fonct-item" action="#" name="fonct-choisir">
+				<a class="fonct-item" id="fonct-choisir">
 					<div class="fonct-item__number">1</div>
 					<div class=" fonct-item__icone">
 						<i class="fas fa-mobile-alt"></i>
@@ -72,7 +72,7 @@
 					<p class="fonct-item__lib">Choisissez un restaurant</p>
 				</a>
 
-				<a class="fonct-item" action="#" name="fonct-composer">
+				<a class="fonct-item" id="fonct-composer">
 					<div class="fonct-item__number">2</div>
 					<div class=" fonct-item__icone">
 						<i class="fas fa-list-ul"></i>
@@ -82,7 +82,7 @@
 					</div>
 				</a>
 
-				<a class="fonct-item" action="#" name="fonct-deguster">
+				<a class="fonct-item" id="fonct-deguster">
 					<div class="fonct-item__number">3</div>
 					<div class=" fonct-item__icone fonct-item__icone__primary">
 						<i class="fas fa-store"></i>
@@ -92,11 +92,11 @@
 					</div>
 				</a>
 			</div>
-		</section>
+		</div>
 
 		<!-- Début affichage des restaurants -->
 
-		<section class="restos">
+		<div class="restos">
 			<h1 class="restos__title">Restaurants</h1>
 
 			<div class="restos__grid">
@@ -164,7 +164,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 
 		<!-- Début du pied de page -->
 		<footer>
@@ -172,7 +172,7 @@
 			<ul>
 				<li>
 					<i class="fas fa-utensils"></i>
-					<a href="#">&nbspProposer un restaurant</a>
+					<a href="#">&nbsp;Proposer un restaurant</a>
 				</li>
 				<li>
 					<i class="fas fa-hands-helping"></i>
