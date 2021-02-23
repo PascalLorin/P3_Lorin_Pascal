@@ -1,41 +1,88 @@
+/**** Déroulement du spinner                     ****/
+/**** Transition couleur du background-color     ****/
+/**** Agrandissement du logo du site en rotation ****/
 
-@mixin heading-shadow($colour:lightness-shift($colour-primary), $offset: $heading-shadow-size){
-    text-shadow: $offset $offset $colour;
-}
-
-
-@mixin border($colour:$colour-primary) {
-    border: .1rem solid $colour;
-}
-
-
-@mixin img-ratio {
-    width: 100%;
-        display: block;
-        overflow: hidden;
-        padding-top: 56.25%;
-        position: relative;
-        & img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%, -50%);
-        }
-}
-
-@mixin btn {
-    padding: $grid-gutter;
-    @include border;
-    color: $colour-primary;
-    background: $colour-secondary;
-    cursor: pointer;
-    &:hover{
-        background: $colour-primary;
-        color: $colour-accent;
+@keyframes spinner-background {
+    0% {
+        background-color: $colour-secondary;
+        z-index: 1;
     }
-    &--full-width {
+
+    70% {
+        background-color: $colour-primary;
+        z-index: 1;
+    }
+
+    100% {
+        display: none;
+        background-color: $colour-primary;
+        z-index: -1;
+    }
+}
+
+@keyframes spinner-run {
+    0% {
+        visibility: hidden;
+        transform: rotate(0deg);
+        font-size: 0.1rem;
+    }
+
+    80% {
+        visibility: visible;
+        z-index: 1;
+        transform: rotate(1800deg);
+        font-size: 4.0rem;
+    }
+
+    95% {
+        display: none;
+        transform: rotate(1800deg);
+        visibility: hidden;
+    }
+
+    100% {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@keyframes love-btn-color {
+    from {
+        color: transparent;
+        opacity: 1;
+    }
+
+    to {
+        color: $colour-primary;
+        opacity: 1;
+    }
+}
+
+@keyframes aff-fondu {
+    0% {
+        transform: translateY(2.0rem);
+        opacity: 0;
+    }
+
+    75% {
+        transform: translateY(0);
+    }
+
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes btn-popup {
+    0% {
         width: 100%;
-        margin: 0 auto;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        width: 20.0rem;
     }
 }
