@@ -193,33 +193,18 @@
     cursor: grab;
 
     .menu-part__plat-txt {
-        transition: all 2.0s ease-in-out;
-
-        @media screen and (max-width:321px) {
-            width: 70%;
-        }
-
-        @media screen and (max-width:421px) {
-            width: 75%;
-        }
-
-        @media screen and (max-width:480px) {
-            width: 80%;
-        }
-
-        @media screen and (min-width:481px) {
-            width: 88%;
-        }
+        transition: width $transition-duration ease-in-out;
+        width: calc(100% - 7.0rem);
     }
 
     .menu-part__plat-check {
         transform: translateX(-7.0rem);    
-        transition: transform ease-in-out 2.0s;
+        transition: transform ease-in-out $transition-duration;
 
         & i {
             transform: rotate(360deg);
             transition-delay: 0.5s;
-            transition: transform ease-in-out 2.0s;
+            transition: transform ease-in-out $transition-duration;
         }
     }
 }

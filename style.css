@@ -81,14 +81,8 @@
 }
 @media screen and (min-width: 991px) and (max-width: 1199px) {
   .fonct-items__grid,
+.restos__grid,
 .menu {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    flex-direction: row;
-    grid-gap: 1rem;
-  }
-
-  .restos__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     flex-direction: row;
@@ -720,36 +714,17 @@ footer ul li a i {
   cursor: grab;
 }
 .menu-part__plat:hover .menu-part__plat-txt {
-  transition: all 2s ease-in-out;
-}
-@media screen and (max-width: 321px) {
-  .menu-part__plat:hover .menu-part__plat-txt {
-    width: 70%;
-  }
-}
-@media screen and (max-width: 421px) {
-  .menu-part__plat:hover .menu-part__plat-txt {
-    width: 75%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .menu-part__plat:hover .menu-part__plat-txt {
-    width: 80%;
-  }
-}
-@media screen and (min-width: 481px) {
-  .menu-part__plat:hover .menu-part__plat-txt {
-    width: 88%;
-  }
+  transition: width 1s ease-in-out;
+  width: calc(100% - 7.0rem);
 }
 .menu-part__plat:hover .menu-part__plat-check {
   transform: translateX(-7rem);
-  transition: transform ease-in-out 2s;
+  transition: transform ease-in-out 1s;
 }
 .menu-part__plat:hover .menu-part__plat-check i {
   transform: rotate(360deg);
   transition-delay: 0.5s;
-  transition: transform ease-in-out 2s;
+  transition: transform ease-in-out 1s;
 }
 
 .commander {
