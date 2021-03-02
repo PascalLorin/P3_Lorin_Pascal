@@ -433,11 +433,11 @@ h3 {
   right: 3rem;
   height: 3rem;
   width: 3rem;
+  line-height: 3rem;
+  font-size: 3rem;
   border: none;
   border-radius: 1.5rem;
   background-color: #fff;
-  line-height: 3rem;
-  font-size: 3rem;
   cursor: pointer;
 }
 
@@ -548,10 +548,11 @@ footer ul li a i {
 }
 .entete-txt .love-btn {
   position: absolute;
-  bottom: 1.5rem;
-  right: 3rem;
+  bottom: 2rem;
+  right: 2rem;
+  height: 3rem;
   width: 3rem;
-  align-items: center;
+  line-height: 3rem;
   font-size: 3rem;
   border: none;
   border-radius: 1.5rem;
