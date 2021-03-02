@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation-duration: 4s;
+    animation-duration: 3.5s;
     animation-timing-function: ease-in-out;
     animation-name: spinner-background;
 }
@@ -26,6 +26,7 @@
 }
 
 .spinner-run {
+    font-family: Shrikhand;
     color: black;
     position: fixed;
 }
@@ -78,6 +79,8 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
     padding-bottom: 7.0rem;
     animation-duration: 0.6s;
     animation-timing-function: ease;
@@ -85,9 +88,11 @@
 
     &-title {
         margin-top: 4.0rem;
+        padding: 0 $grid-gutter;
         text-align: center;
         justify-content: center;
 
+        /* Titre principal */
         &__t {
             font-weight: 700;
             font-size: 3.2rem;
@@ -96,6 +101,7 @@
             margin-bottom: 2.0rem;
         }
 
+        /* Titre secondaire */
         &__p {
             font-weight: 500;
             font-size: 2.2rem;
@@ -105,9 +111,10 @@
         }
     }
 
-    & a {
+    /* Bouton rechercher */
+    &__btn {
         height: 6rem;
-        padding: 2rem; 
+        padding: 2rem;
         width: 26.0rem;
         text-align: center;
         justify-content: center;
@@ -118,10 +125,9 @@
         color: white;
         box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem darken($colour-lightgrey, 10%);
 
-        &:hover,
-        &:active {
-            background: linear-gradient(to top left, $colour-secondary, $colour-primary);
-            box-shadow: 0.5rem 0.5rem 1.5rem 0.5rem darken($colour-primary, 20%);
+        &:hover {
+            opacity: 0.7;
+            box-shadow: 0.5rem 0.5rem 1.5rem 0.5rem darken($colour-lightgrey, 25%);
         }
     }
 }
@@ -136,7 +142,6 @@
     grid-gap: $grid-gutter;
 
     &__title {
-        align-items: left;
         letter-spacing: -0.1rem;
         margin-bottom: 2.0rem;
     }
@@ -194,11 +199,9 @@
         margin-left: 2.0rem;
     }
 
-    &:hover,
-    &:active,
-    &:visited {
-        background-color: lighten($colour-secondary, 10%);
-        box-shadow: 0.5rem 2.0rem 2.0rem $colour-primary;
+    &:hover {
+        background-color: lighten($colour-lightgrey, 2%);
+        box-shadow: 0.5rem 2.0rem 2.0rem darken($colour-lightgrey, 15%);
     }
 }
 
@@ -225,9 +228,8 @@
     margin-bottom: $grid-gutter*3;
     transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-    &:hover,
-    &:active {
-        box-shadow: 0.5rem 1.0rem 1.0rem $colour-primary;
+    &:hover {
+        box-shadow: 0.5rem 1.0rem 1.0rem darken($colour-lightgrey, 25%);
         transform: scale(1.02);
     }
 
@@ -313,7 +315,7 @@
 
 /****** Footer : menu de bas de page ******/
 footer {
-    background-color: #353535;
+    background-color: $colour-footer;
     padding: 3.0rem;
 
     & h3 {
