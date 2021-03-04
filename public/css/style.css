@@ -477,6 +477,14 @@ footer ul li {
   text-decoration: none;
   margin: 1rem 0;
 }
+footer ul li i {
+  height: 2rem;
+  width: 2rem;
+  align-self: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+}
 footer ul li a {
   color: #fff;
   text-decoration: none;
@@ -489,14 +497,6 @@ footer ul li a:hover, footer ul li a:active {
   color: #9356DC;
   text-transform: uppercase;
   transform: scale(1.05);
-}
-footer ul li a i {
-  height: 2rem;
-  width: 5rem;
-  align-self: center;
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: #fff;
 }
 
 /*  Header  */

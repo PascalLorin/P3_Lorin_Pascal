@@ -333,6 +333,15 @@ footer {
             text-decoration: none;
             margin: 1.0rem 0;
 
+            & i {
+                height: 2.0rem;
+                width: 2.0rem;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: 900;
+                color: #fff;
+            }
+
             & a {
                 color: #fff;
                 text-decoration: none;
@@ -346,16 +355,6 @@ footer {
                     color: $colour-primary;
                     text-transform: uppercase;
                     transform: scale(1.05);
-                }
-
-                & i {
-                    height: 2.0rem;
-                    width: 5.0rem;
-                    align-self: center;
-                    font-size: 1.5rem;
-                    font-weight: 900;
-                    color: #fff;
-
                 }
             }
         }
